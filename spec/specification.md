@@ -124,13 +124,12 @@ data...
 
 ## Methods
 
-| Method Name | Description                                              |
-| :---------- | :------------------------------------------------------- |
-| `PUSH`      | Send a directory tree                                    |
-| `PULL`      | Retrieve a directory tree                                |
-| `POLL`      | Reply to this tidbit to start operation                  |
-| `PICK`      | Get next directory tree node                             |
-| `PACK`      | Transfer the Chang checksum caculated from tidbit stream |
+| Method Name | Description                  |
+| :---------- | :--------------------------- |
+| `PUSH`      | Send a directory tree        |
+| `PULL`      | Receive a directory tree     |
+| `POLL`      | Reply to start operation     |
+| `PICK`      | Get next directory tree node |
 
 ...
 
@@ -138,27 +137,31 @@ data...
 
 ### Response Status Code Classes
 
-| Status Code Range          | Classified As                                                                       |
-| :------------------------- | :---------------------------------------------------------------------------------- |
-| $[0, 255] \cup [256, 999]$ | Operational errors (GNU C library exit status values and DXP reserved status codes) |
-| $[1000, 1999]$             | Request-response                                                                    |
-| $[2000, 2999]$             | Information exchange                                                                |
+| Status Code Range          | Class                                                                  |
+| :------------------------- | :--------------------------------------------------------------------- |
+| $[1, 255] \cup [256, 999]$ | Error (GNU C library exit status values and DXP reserved status codes) |
+| $[1000, 1999]$             | Request-response                                                       |
+| $[2000, 2999]$             | Operation                                                              |
 
 ### Predefined Response Status Codes
 
-| Status Code | Status Name | Meaning                                    |
-| ----------- | ----------- | ------------------------------------------ |
-| `0`         | `OK`        | The prior query processing status is fine. |
-| `1000`      | `READY`     | Ready to process the request.              |
-| `1001`      | `DECLINED`  | The request is declined.                   |
-| `2000`      | `DONE`      | There are no more nodes to `PICK`.         |
-| `2001`      | `MORE`      | There is at least one more node to `PICK`. |
+| Status Code | Status Name      | Meaning                                    |
+| ----------- | ---------------- | ------------------------------------------ |
+| `0`         | `OK`             | The prior query processing status is fine. |
+| `1000`      | `ACCEPTED`       | The request has been accepted.             |
+| `1001`      | `DECLINED`       | The request has been declined.             |
+| `1002`      | `COOKIE EXPIRED` | The cookie in request has expired.         |
+| `2000`      | `DONE`           | There are no more nodes to `PICK`.         |
+| `2001`      | `MORE`           | There is at least one more node to `PICK`. |
 
-The exit status codes ranged from `1` to `999` are composed of the following:
+The exit status code range $[1, 999]$ is defined based on the following:
 
-- `1` through `255`, follows the GNU C library exit status values[^1] (aside from `0`)
+- `1` through `255`, follows the GNU C library exit status values (aside from `0`)[^1]
 - `256` through `999` DXP reserved status codes
 
 ## DXP Connections
 
 ...
+
+[^1]: https://www.gnu.org/software/libc/manual/html_node/Exit-Status.html,  
+        https://www.gnu.org/software/libc/manual/html_node/Error-Codes.html
