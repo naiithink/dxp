@@ -103,23 +103,21 @@ DXP-Version: 1.0.0
 Date: 2024-02-04T19:50:00+07:00
 From: localhost
 To: example.com
-Token: sometoken
+Cookie: somecookie
+Cookie-Expire: 2024-02-04T20:50:00+07:00
 
 ```
 
 Response:
 
 ```
-0 OK
+1000 ACCEPTED
 DXP-version: 1.0.0
 Date: 2024-02-04T19:50:30+07:00
 From: localhost
 To: example.com
 Cookie: somecookie
-Token: sometoken
-Content-Type: inode/directory
 
-data...
 ```
 
 ## Methods
