@@ -92,33 +92,7 @@ that sends or receives a given tidbit, respectively.
 
 ### Example Tidbit Exchange
 
-The following illustrates a typical DXP tidbit exchange for a PUSH request
-on the URI "dxp://example.com/usr/local/lib/ldxp":
-
-Request:
-
-```
-PUSH ldxp
-DXP-Version: 1.0.0
-Date: 2024-02-04T19:50:00+07:00
-From: localhost
-To: example.com
-Cookie: somecookie
-Cookie-Expire: 2024-02-04T20:50:00+07:00
-
-```
-
-Response:
-
-```
-1000 ACCEPTED
-DXP-version: 1.0.0
-Date: 2024-02-04T19:50:30+07:00
-From: localhost
-To: example.com
-Cookie: somecookie
-
-```
+...
 
 ## Methods
 
@@ -161,5 +135,6 @@ The exit status code range $[1, 999]$ is defined based on the following:
 
 ...
 
-[^1]: https://www.gnu.org/software/libc/manual/html_node/Exit-Status.html,  
-        https://www.gnu.org/software/libc/manual/html_node/Error-Codes.html
+[^1]:
+    https://www.gnu.org/software/libc/manual/html_node/Exit-Status.html,  
+     https://www.gnu.org/software/libc/manual/html_node/Error-Codes.html
