@@ -2,6 +2,10 @@
 # Commit message draft
 .gitmessage
 
+# Object files
+lib/
+obj/
+
 
 # Linux
 *~
