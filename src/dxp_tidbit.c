@@ -74,6 +74,7 @@ void dxp_tidbit_serialize(dxp_tidbit_header *header, dxp_tidbit_body *body,
             __DXP_DEBUG_PRINTF("Failed to serialize tidbit body");
             return;
         }
+
         head += DXP_TIDBIT_BODY_LINE_SIZE;
     }
 }
