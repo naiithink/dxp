@@ -1,3 +1,8 @@
+LIB_NAME		:= libdxp
+VERSION_MAJOR	= 0
+VERSION_MINOR	= 0
+VERSION_PATCH	= 1
+
 LIB_DIR			:= lib
 OBJ_DIR			:= obj
 INCLUDE_DIR		:= include/dxp
@@ -6,7 +11,6 @@ SRC_DIR			:= src
 SRC_FILES		:= $(wildcard $(SRC_DIR)/*.c)
 OBJ_FILES		:= $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC_FILES))
 
-LIB_NAME		:= libdxp
 CC				:= clang
 CFLAGS			=
 CPPFLAGS		:= -I$(INCLUDE_DIR)
@@ -21,7 +25,7 @@ UNAME			:= $(shell uname)
 ifeq ($(UNAME), Darwin)
 	LIB_SHARED	:= $(LIB_NAME).dylib
 else ifeq ($(UNAME), Linux)
-	LIB_SHARED	:= $(LIB_NAME).so
+	LIB_SHARED	:= $(LIB_NAME).so.$(VERSION_MAJOR)
 else
 	$(error Unsupported OS: $(UNAME))
 endif
