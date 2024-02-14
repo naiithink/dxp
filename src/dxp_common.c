@@ -3,7 +3,7 @@
 #include "../include/dxp/dxp_method.h"
 #include "../include/dxp/dxp_tidbit.h"
 
-void *dxp_memcpy(void *dst, rsize_t dst_size, const void *src, rsize_t count)
+void *dxp_memcpy(void *dst, size_t dst_size, const void *src, size_t count)
 {
     if (count > dst_size || dst_size > INTSIZE_MAX)
     {

@@ -51,7 +51,7 @@ extern "C"
  */
 #define INTSIZE_MAX (UINTPTR_MAX >> 1)
 
-    void *dxp_memcpy(void *, rsize_t, const void *, rsize_t);
+    void *dxp_memcpy(void *, size_t, const void *, size_t);
 
     /**
      * Trim string
