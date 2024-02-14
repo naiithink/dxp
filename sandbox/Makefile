@@ -7,7 +7,7 @@ LDFLAGS			:= -L../lib -ldxp
 all: clean libs $(TARGET)
 
 %: %.c
-	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) $< -o $@
+	$(CC) $(CFLAGS) $(CPPFLAGS) $< -o $@ $(LDFLAGS)
 
 clean:
 	$(MAKE) -C $(LIB_DIR) clean
