@@ -25,7 +25,7 @@ UNAME			:= $(shell uname)
 ifeq ($(UNAME), Darwin)
 	LIB_SHARED	:= $(LIB_NAME).dylib
 else ifeq ($(UNAME), Linux)
-	LIB_SHARED	:= $(LIB_NAME).so.$(VERSION_MAJOR)
+	LIB_SHARED	:= $(LIB_NAME).so
 else
 	$(error Unsupported OS: $(UNAME))
 endif
