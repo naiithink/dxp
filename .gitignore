@@ -5,6 +5,9 @@
 # Object files
 lib/
 obj/
+sandbox/test*
+!sandbox/test*.c
+!sandbox/test*.h
 
 
 # Linux
