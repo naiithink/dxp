@@ -15,7 +15,7 @@ extern "C"
 /* #include <openssl/ssl.h> */
 #include <openssl/opensslv.h>
 
-#define MIN_OPENSSL_VERSION 0x30200010L
+#define MIN_OPENSSL_VERSION 0x30000020L
 #if (OPENSSL_VERSION_NUMBER < MIN_OPENSSL_VERSION)
 #error "OpenSSL version not met. Check MIN_OPENSSL_VERSION"
 #endif
