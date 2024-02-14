@@ -41,13 +41,13 @@ $(LIB_DIR)/%.a: $(OBJ_FILES)
 	ar rcs $@ $^
 
 $(LIB_DIR)/%.dylib: $(OBJ_FILES)
-	$(CC) $(CFLAGS) $(LDFLAGS) $(DYFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) $(DYFLAGS) -o $@ $^ $(LDFLAGS)
 
 $(LIB_DIR)/%.so: $(OBJ_FILES)
-	$(CC) $(CFLAGS) $(LDFLAGS) $(DYFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) $(DYFLAGS) -o $@.$(VERSION_MAJOR) $^ $(LDFLAGS)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INCLUDE_DIR)/%.h | $(OBJ_DIR)
-	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -c -o $@ $<
+	$(CC) $(CFLAGS) $(CPPFLAGS) -c -o $@ $< $(LDFLAGS)
 
 $(LIB_DIR):
 	@mkdir -p $@
