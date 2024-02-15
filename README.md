@@ -7,7 +7,7 @@ The Directory Exchange Protocol (DXP)
 > 01418351: Computer Communications and Cloud Computing Principles
 
 The specification file is located at
-[`spec/specification.md`](spec/specification.md).
+[`assets/specification.md`](assets/specification.md).
 
 ## About the Project
 
