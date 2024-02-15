@@ -10,7 +10,7 @@
 /**
  * Supposed to ALWAYS be private.
  */
-static void *dxp_control_routine_invoke(uint8_t control_instruction_number,
+static void *__dxp_control_routine_invoke(uint8_t control_instruction_number,
                                         void   *arg)
 {
     switch (control_instruction_number)
