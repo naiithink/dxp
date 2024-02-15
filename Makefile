@@ -32,7 +32,7 @@ endif
 
 TARGET_FILES	:= $(LIB_DIR)/$(LIB_STATIC) $(LIB_DIR)/$(LIB_SHARED)
 
-.PHONY: clean all .FORCE
+.PHONY: all clean .FORCE
 all: clean $(TARGET_FILES)
 
 $(TARGET_FILES): $(OBJ_FILES) | $(LIB_DIR)
