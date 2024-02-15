@@ -15,17 +15,9 @@ extern "C"
 #define __DXP_STDC_2023
 #endif
 
-#include "tidbit.h"
+    void dxp_cleanup(void);
 
-    typedef struct
-    {
-        long time;
-    } dxp_cookie_table;
-
-    /**
-     * Get method number from name
-     */
-    int dxp_get_method(char *);
+    void dxp_exit(int);
 
 #ifdef __cplusplus
 }

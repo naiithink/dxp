@@ -34,7 +34,9 @@ extern "C"
 
 #include <magic.h>
 
+#include "control.h"
 #include "error.h"
+#include "method.h"
 #include "status.h"
 
 #if defined(_WIN32) || defined(_WIN64) || defined(__CYGWIN__)

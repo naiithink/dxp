@@ -9,21 +9,9 @@ extern "C"
 #include <stdint.h>
 #include <stdio.h>
 
-#define DXP_LINE_TERMINATOR                    "\r\n"
-#define DXP_FIRST_FIELD_SEPARATOR              " "
-#define DXP_FIELD_SEPARATOR                    ":"
-#define DXP_HEADER_SEPARATOR                   "\r\n"
-
-#define DXP_REQUEST_PROPNAME_DXP_VERSION       "DXP-Version"
-#define DXP_RESPONSE_PROPNAME_DATE             "Date"
-#define DXP_RESPONSE_PROPNAME_FROM             "From"
-#define DXP_RESPONSE_PROPNAME_TO               "To"
-#define DXP_RESPONSE_PROPNAME_COOKIE           "Cookie"
-#define DXP_RESPONSE_PROPNAME_TOKEN            "Token"
-#define DXP_RESPONSE_PROPNAME_PUSH_NAME        "Push-Name"
-#define DXP_RESPONSE_PROPNAME_PULL_PATH        "Pull-Path"
-#define DXP_RESPONSE_PROPNAME_DIGEST           "Digest"
-#define DXP_RESPONSE_PROPNAME_CONTENT_TYPE     "Content-Type"
+#include "control.h"
+#include "method.h"
+#include "status.h"
 
 /* RFC3339 "2024-02-05T06:00:00+00:00" */
 #define DXP_TIDBIT_DATETIME_FORMAT_RFC3339_LEN 25
@@ -34,11 +22,6 @@ extern "C"
 #define DXP_TIDBIT_REQUEST                0
 #define DXP_TIDBIT_RESPONSE               1
 
-#define DXP_METHOD_PUSH                   0b0001
-#define DXP_METHOD_PULL                   0b0010
-#define DXP_METHOD_POLL                   0b0100
-#define DXP_METHOD_PICK                   0b1000
-
 #define DXP_NODE_TYPE_S_IFCHR             0b0001 /* character special */
 #define DXP_NODE_TYPE_S_IFDIR             0b0010 /* directory */
 #define DXP_NODE_TYPE_S_IFBLK             0b0011 /* block special */
@@ -48,7 +31,7 @@ extern "C"
 #define DXP_NODE_TYPE_S_IFWHT             0b0111 /* whiteout */
 
 /**
- * Tidbit header
+ * Raw tidbit header
  */
 #pragma pack(push)
     typedef struct
@@ -76,6 +59,56 @@ extern "C"
      * 2-D array of 32-bit data lines
      */
     typedef uint32_t dxp_tidbit_body;
+
+    /**
+     * Experimental
+    typedef enum
+    {
+        REQUEST,
+        RESPONSE
+    } tidbit_type;
+
+    typedef enum
+    {
+        PUSH,
+        PULL,
+        PICK,
+        PACK
+    } tidbit_method;
+
+    typedef enum
+    {
+        IFCHR,
+        IFDIR,
+        IFBLK,
+        IFREG,
+        IFLNK,
+        IFSOCK,
+        IFWHT
+    } node_type;
+
+    typedef struct
+    {
+        struct version
+        {
+            uint8_t major;
+            uint8_t minor;
+            uint8_t patch;
+        };
+        struct flags
+        {
+            tidbit_type type;
+            bool        is_fragment;
+            bool        has_control_instructions;
+            bool        is_control_instructions_repeating;
+            bool        has_cookie;
+            bool        has_checksum;
+        };
+        time_t        unix_time;
+        node_type     node_type;
+        tidbit_method tidbit_method;
+    } tidbit;
+    */
 
     static const size_t DXP_TIDBIT_HEADER_SIZE    = sizeof(dxp_tidbit_header);
     static const size_t DXP_TIDBIT_BODY_LINE_SIZE = sizeof(dxp_tidbit_body);

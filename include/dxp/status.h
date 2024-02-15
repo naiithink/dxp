@@ -14,7 +14,7 @@ extern "C"
 #define DXP_STATUS_OK        0
 
 /* Request-response */
-#define DXP_STATUS_READY     1000
+#define DXP_STATUS_ACCEPTED  1000
 #define DXP_STATUS_DECLINED  1001
 
 /* Information exchange */

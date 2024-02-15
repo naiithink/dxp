@@ -1,6 +1,5 @@
 #include "../include/dxp/common.h"
 
-#include "../include/dxp/method.h"
 #include "../include/dxp/tidbit.h"
 
 void *dxp_memcpy(void *dst, size_t dst_size, const void *src, size_t count)
