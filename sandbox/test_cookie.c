@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../include/dxp/dxp_cookie.h"
+#include "../include/dxp/cookie.h"
 
 int main(int argc, char **argv)
 {

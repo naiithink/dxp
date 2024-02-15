@@ -1,5 +1,5 @@
-#include "../include/dxp/dxp_common.h"
-#include "../include/dxp/dxp_method.h"
+#include "../include/dxp/common.h"
+#include "../include/dxp/method.h"
 
 #include "../include/dxp/dxp.h"
 

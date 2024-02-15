@@ -1,6 +1,6 @@
-#include "../include/dxp/dxp_common.h"
+#include "../include/dxp/common.h"
 
-#include "../include/dxp/dxp_tidbit.h"
+#include "../include/dxp/tidbit.h"
 
 dxp_tidbit_header *
 dxp_tidbit_header_new(uint8_t version_major, uint8_t version_minor,

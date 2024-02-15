@@ -1,6 +1,6 @@
-#include "../include/dxp/dxp_common.h"
+#include "../include/dxp/common.h"
 
-#include "../include/dxp/dxp_crypto.h"
+#include "../include/dxp/crypto.h"
 
 dxp_digest_context *dxp_digest_new_context(void) { return EVP_MD_CTX_new(); }
 

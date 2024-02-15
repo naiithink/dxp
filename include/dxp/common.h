@@ -34,8 +34,8 @@ extern "C"
 
 #include <magic.h>
 
-#include "dxp_error.h"
-#include "dxp_status.h"
+#include "error.h"
+#include "status.h"
 
 #if defined(_WIN32) || defined(_WIN64) || defined(__CYGWIN__)
 #include <windows.h>

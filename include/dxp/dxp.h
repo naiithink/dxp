@@ -15,7 +15,7 @@ extern "C"
 #define __DXP_STDC_2023
 #endif
 
-#include "dxp_tidbit.h"
+#include "tidbit.h"
 
     typedef struct
     {

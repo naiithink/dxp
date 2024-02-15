@@ -2,7 +2,7 @@
 
 #include <openssl/sha.h>
 
-#include "../include/dxp/dxp_crypto.h"
+#include "../include/dxp/crypto.h"
 
 int main(int argc, char **argv)
 {

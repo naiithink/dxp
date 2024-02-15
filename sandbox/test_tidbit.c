@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-#include "../include/dxp/dxp_common.h"
-#include "../include/dxp/dxp_crypto.h"
-#include "../include/dxp/dxp_tidbit.h"
+#include "../include/dxp/common.h"
+#include "../include/dxp/crypto.h"
+#include "../include/dxp/tidbit.h"
 
 int main(int argc, char **argv)
 {
