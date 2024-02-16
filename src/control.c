@@ -16,7 +16,7 @@ static void *__dxp_control_routine_invoke(uint8_t control_instruction_number,
     case DXP_CONTROL_FILE_WRITE:
         return (*dxp_control_func_file_write)(arg);
     default:
-        errno = EPROCUNAVAIL;
+        errno = EPROTO;
         perror("Unknown control function");
         dxp_exit(EXIT_FAILURE);
     }
