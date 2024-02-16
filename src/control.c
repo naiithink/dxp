@@ -1,8 +1,4 @@
-#include <errno.h>
-#include <stdint.h>
-#include <stdio.h>
-#include <stdlib.h>
-
+#include "../include/dxp/common.h"
 #include "../include/dxp/dxp.h"
 
 #include "../include/dxp/control.h"
